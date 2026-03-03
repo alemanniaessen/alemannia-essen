@@ -24,7 +24,7 @@ export default function TeamDetail() {
         { tag: "Freitag", zeit: "19:30 - 21:30 Uhr" },
       ],
       spieler: [
-        { name: "Kevin Keeper", vorname: "Kevin", nachname: "Keeper", position: "Torwart", nummer: 1, bild: "/erste9.JPG" },
+        { name: "Samer Kouki", vorname: "Samer", nachname: "Kouki", position: "Torwart", nummer: 31, bild: "/samer.png" },
         { name: "Marc Schluss", vorname: "Marc", nachname: "Schluss", position: "Torwart", nummer: 22, bild: "/erste9.JPG" },
         { name: "Max Abwehr", vorname: "Max", nachname: "Abwehr", position: "Abwehr", nummer: 4, bild: "/erste8.JPG" },
         { name: "Tim Tackle", vorname: "Tim", nachname: "Tackle", position: "Abwehr", nummer: 5, bild: "/erste12.JPG" },
@@ -53,20 +53,81 @@ export default function TeamDetail() {
         { name: "Christian Orga", rolle: "Betreuer", bild: "/erste9.JPG" },
       ]
     },
-    "dritte": {
-      name: "2. Mannschaft", 
+    "zweite": {
+      name: "2. Mannschaft",
       liga: "Kreisliga B",
-      teamBild: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1200",
-      trainingsort: "Sportanlage Seumannstraße (Platz 1)",
+      teamBild: "/erste19.JPG", 
+      trainingsort: "Sportanlage Alemannia Essen ",
       trainingszeiten: [
-        { tag: "Mittwoch", zeit: "19:00 - 20:30 Uhr" },
-        { tag: "Freitag", zeit: "19:00 - 20:30 Uhr" }
+        { tag: "Mittwoch", zeit: "19:30 - 21:30 Uhr" },
+        { tag: "Freitag", zeit: "33:30 - 21:30 Uhr" },
       ],
       spieler: [
-        { name: "Kevin Keeper", vorname: "Kevin", nachname: "Keeper", position: "Torwart", nummer: 1, bild: null },
+        { name: "Kevin sssssssssssssssssssssssssssssssssssssssssssssssssss", vorname: "Kevin", nachname: "Keeper", position: "Torwart", nummer: 1, bild: "/erste9.JPG" },
+        { name: "Marc Schluss", vorname: "Marc", nachname: "Schluss", position: "Torwart", nummer: 22, bild: "/erste9.JPG" },
+        { name: "Max Abwehr", vorname: "Max", nachname: "Abwehr", position: "Abwehr", nummer: 4, bild: "/erste8.JPG" },
+        { name: "Tim Tackle", vorname: "Tim", nachname: "Tackle", position: "Abwehr", nummer: 5, bild: "/erste12.JPG" },
+        { name: "Sven Safe", vorname: "Sven", nachname: "Safe", position: "Abwehr", nummer: 2, bild: "/erste20.JPG" },
+        { name: "Leo Links", vorname: "Leo", nachname: "Links", position: "Abwehr", nummer: 3, bild: "/erste21.JPG" },
+        { name: "Ben Block", vorname: "Ben", nachname: "Block", position: "Abwehr", nummer: 15, bild: "/erste22.JPG" },
+        { name: "Osman Durmus", vorname: "Osman", nachname: "Durmus", position: "Mittelfeld", nummer: 10, bild: "/erste4.JPG" },
+        { name: "Recep Durmus", vorname: "Recep", nachname: "Durmus", position: "Mittelfeld", nummer: 8, bild: "/erste6.JPG" },
+        { name: "Luka Lauf", vorname: "Luka", nachname: "Lauf", position: "Mittelfeld", nummer: 6, bild: "/erste10.JPG" },
+        { name: "Fabian Flanke", vorname: "Fabian", nachname: "Flanke", position: "Mittelfeld", nummer: 7, bild: "/erste13.JPG" },
+        { name: "Mo Mitte", vorname: "Mo", nachname: "Mitte", position: "Mittelfeld", nummer: 13, bild: "/erste19.JPG" },
+        { name: "Ali Assist", vorname: "Ali", nachname: "Assist", position: "Mittelfeld", nummer: 17, bild: "/erste26.JPG" },
+        { name: "Abou Touray", vorname: "Abou", nachname: "Touray", position: "Angriff", nummer: 9, bild: "/erste1.JPG" },
+        { name: "Kagola Traore", vorname: "Kagola", nachname: "Traore", position: "Angriff", nummer: 14, bild: "/erste10.JPG" },
+        { name: "Sam Sturm", vorname: "Sam", nachname: "Sturm", position: "Angriff", nummer: 11, bild: "/erste14.JPG" },
+        { name: "Jan Joker", vorname: "Jan", nachname: "Joker", position: "Angriff", nummer: 18, bild: "/erste15.JPG" },
+        { name: "Nick Netz", vorname: "Nick", nachname: "Netz", position: "Angriff", nummer: 19, bild: "/erste17.JPG" },
+        { name: "Tom Treffer", vorname: "Tom", nachname: "Treffer", position: "Angriff", nummer: 20, bild: "/erste23.JPG" },
+        { name: "Paul Power", vorname: "Paul", nachname: "Power", position: "Angriff", nummer: 21, bild: "/erste29.JPG" },
       ],
       trainer: [
-        { name: "Mehmet Kaya", rolle: "Cheftrainer", bild: null },
+        { name: "Mehmet Kaya", rolle: "Cheftrainer", bild: "/erste5.JPG" },
+        { name: "Ali Demir", rolle: "Co-Trainer", bild: "/erste28.JPG" },
+        { name: "Stefan Stopp", rolle: "Torwart-Trainer", bild: "/erste9.JPG" },
+        { name: "Bernd Fit", rolle: "Athletik-Trainer", bild: "/erste25.JPG" },
+        { name: "Christian Orga", rolle: "Betreuer", bild: "/erste9.JPG" },
+      ]
+    },"c-jugend": {
+      name: "111111111111111111. Mannschaft",
+      liga: "Kreisliga A",
+      teamBild: "/erste23.JPG", 
+      trainingsort: "Sportanlage Alemannia Essen ",
+      trainingszeiten: [
+        { tag: "Mittwoch", zeit: "19:30 - 21:30 Uhr" },
+        { tag: "Freitag", zeit: "19:30 - 21:30 Uhr" },
+      ],
+      spieler: [
+        { name: "Kevin Keeper", vorname: "Samer", nachname: "Kouki", position: "Torwart", nummer: 31, bild: "/samer.JPG" },
+        { name: "Marc Schluss", vorname: "Marc", nachname: "Schluss", position: "Torwart", nummer: 22, bild: "/erste9.JPG" },
+        { name: "Max Abwehr", vorname: "Max", nachname: "Abwehr", position: "Abwehr", nummer: 4, bild: "/erste8.JPG" },
+        { name: "Tim Tackle", vorname: "Tim", nachname: "Tackle", position: "Abwehr", nummer: 5, bild: "/erste12.JPG" },
+        { name: "Sven Safe", vorname: "Sven", nachname: "Safe", position: "Abwehr", nummer: 2, bild: "/erste20.JPG" },
+        { name: "Leo Links", vorname: "Leo", nachname: "Links", position: "Abwehr", nummer: 3, bild: "/erste21.JPG" },
+        { name: "Ben Block", vorname: "Ben", nachname: "Block", position: "Abwehr", nummer: 15, bild: "/erste22.JPG" },
+        { name: "Osman Durmus", vorname: "Osman", nachname: "Durmus", position: "Mittelfeld", nummer: 10, bild: "/erste4.JPG" },
+        { name: "Recep Durmus", vorname: "Recep", nachname: "Durmus", position: "Mittelfeld", nummer: 8, bild: "/erste6.JPG" },
+        { name: "Luka Lauf", vorname: "Luka", nachname: "Lauf", position: "Mittelfeld", nummer: 6, bild: "/erste10.JPG" },
+        { name: "Fabian Flanke", vorname: "Fabian", nachname: "Flanke", position: "Mittelfeld", nummer: 7, bild: "/erste13.JPG" },
+        { name: "Mo Mitte", vorname: "Mo", nachname: "Mitte", position: "Mittelfeld", nummer: 13, bild: "/erste19.JPG" },
+        { name: "Ali Assist", vorname: "Ali", nachname: "Assist", position: "Mittelfeld", nummer: 17, bild: "/erste26.JPG" },
+        { name: "Abou Touray", vorname: "Abou", nachname: "Touray", position: "Angriff", nummer: 9, bild: "/erste1.JPG" },
+        { name: "Kagola Traore", vorname: "Kagola", nachname: "Traore", position: "Angriff", nummer: 14, bild: "/erste10.JPG" },
+        { name: "Sam Sturm", vorname: "Sam", nachname: "Sturm", position: "Angriff", nummer: 11, bild: "/erste14.JPG" },
+        { name: "Jan Joker", vorname: "Jan", nachname: "Joker", position: "Angriff", nummer: 18, bild: "/erste15.JPG" },
+        { name: "Nick Netz", vorname: "Nick", nachname: "Netz", position: "Angriff", nummer: 19, bild: "/erste17.JPG" },
+        { name: "Tom Treffer", vorname: "Tom", nachname: "Treffer", position: "Angriff", nummer: 20, bild: "/erste23.JPG" },
+        { name: "Paul Power", vorname: "Paul", nachname: "Power", position: "Angriff", nummer: 21, bild: "/erste29.JPG" },
+      ],
+      trainer: [
+        { name: "Mehmet Kaya", rolle: "Cheftrainer", bild: "/erste5.JPG" },
+        { name: "Ali Demir", rolle: "Co-Trainer", bild: "/erste28.JPG" },
+        { name: "Stefan Stopp", rolle: "Torwart-Trainer", bild: "/erste9.JPG" },
+        { name: "Bernd Fit", rolle: "Athletik-Trainer", bild: "/erste25.JPG" },
+        { name: "Christian Orga", rolle: "Betreuer", bild: "/erste9.JPG" },
       ]
     }
   };
@@ -262,36 +323,37 @@ function PlayerCard({ player }) {
 }
 
 // --- TABELLEN COMPONENT (DIREKT HIER EINGEBAUT) ---
-function InternalTabelle({ link }) {
+// --- TABELLEN COMPONENT (KORREKT) ---
+function InternalTabelle() {
   useEffect(() => {
-    // Falls kein Link da ist, nichts tun
-    if (!link || link.includes("HIER_MUSS_DEIN_CODE_REIN")) return;
-
+    // Hier wird dein Script geladen
     const script = document.createElement("script");
-    script.src = link;
+    script.src = "https://www.fussball.de/widgets.js";
     script.type = "text/javascript";
     script.async = true;
-    
-    const container = document.getElementById('fussball-de-container');
-    if (container) {
-      container.innerHTML = ""; // Leeren
-      container.appendChild(script);
-    }
-  }, [link]);
+    document.body.appendChild(script);
+
+    // Aufräumen, wenn man den Tab wechselt
+    return () => {
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
 
   return (
-    <div className="w-full bg-white shadow-lg border rounded-xl p-4 min-h-[500px]">
-       <h3 className="text-2xl font-black text-[#001845] mb-4 uppercase text-center">Aktuelle Tabelle</h3>
-       
-       <div id="fussball-de-container" className="flex justify-center items-center min-h-[200px]">
-          {link && link.includes("HIER_MUSS_DEIN_CODE_REIN") ? (
-            <div className="text-red-500 font-bold p-4 border border-red-200 bg-red-50 rounded">
-               ⚠️ Bitte trage deinen Fussball.de Link ganz oben im Code ein!
-            </div>
-          ) : (
-            <p className="text-gray-400">Lade Tabelle von fussball.de...</p>
-          )}
-       </div>
+    <div className="w-full bg-white shadow-lg border rounded-xl p-4 min-h-[600px]">
+      <h3 className="text-2xl font-black text-[#001845] mb-6 uppercase text-center">
+        Aktuelle Tabelle
+      </h3>
+      
+      {/* Dein Widget-Div */}
+      <div 
+        className="fussballde_widget" 
+        data-id="a30c6b98-ae94-4f2a-a6eb-423c265cb638" 
+        data-type="table"
+        style={{ width: "100%" }}
+      ></div>
     </div>
   );
 }

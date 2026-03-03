@@ -50,10 +50,11 @@ export default function Footer() {
               <span>Haedenkampstraße 81<br />45143 Essen</span>
             </a>
 
-            <a href="--------------------------" className="flex items-center gap-3 text-sm group hover:text-white transition">
-              <div className="text-blue-500 group-hover:text-white transition"><IconMail /></div>
-              <span>-------------------------</span>
+            <a href="mailto:alemanniaessen@gmail.com" className="flex items-center gap-3 text-sm group hover:text-white transition">
+            <div className="text-blue-500 group-hover:text-white transition"><IconMail /></div>
+            <span>alemanniaessen@gmail.com</span>
             </a>
+          
           </div>
         </div>
 

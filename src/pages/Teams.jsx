@@ -7,9 +7,10 @@ export default function Teams() {
       title: "Senioren",
       description: "Unsere Herren-Teams im Spielbetrieb der Kreisliga.",
       teams: [
-        { name: "1. Mannschaft", path: "/teams/erste", image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800" },
+        { name: "1. Mannschaft", path: "/teams/erste", image: "erste18.jpg" },
         { name: "2. Mannschaft", path: "/teams/zweite", image: "https://images.unsplash.com/photo-1510566337590-2fc1f21d0faa?w=800" },
-        { name: "Alte Herren", path: "/teams/alte-herren", image: "https://images.unsplash.com/photo-1431324155629-1a6eda1eedbc?w=800" },
+
+        //{ name: "Alte Herren", path: "/teams/alte-herren", image: "https://images.unsplash.com/photo-1431324155629-1a6eda1eedbc?w=800" },
       ]
     },
     {
@@ -17,8 +18,8 @@ export default function Teams() {
       description: "Die Zukunft von Alemannia Essen. Von den Bambinis bis zur A-Jugend.",
       teams: [
         { name: "C-Jugend (U15)", path: "/teams/c-jugend", image: "https://images.unsplash.com/photo-1518604666860-9ed391f76460?w=800" },
-        { name: "E-Jugend", path: "/teams/e-jugend", image: "https://images.unsplash.com/photo-1526232761682-d26e43ac148e?w=800" },
-        { name: "Bambinis", path: "/teams/bambinis", image: "https://images.unsplash.com/photo-1551958219-acbc608c6377?w=800" },
+        //{ name: "E-Jugend", path: "a/teams/e-jugend", image: "https://images.unsplash.com/photo-1526232761682-d26e43ac148e?w=800" },
+        //{ name: "Bambinis", path: "/teams/bambinis", image: "https://images.unsplash.com/photo-1551958219-acbc608c6377?w=800" },
       ]
     }
   ];
