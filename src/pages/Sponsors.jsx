@@ -63,6 +63,7 @@ export default function Sponsors() {
                 <a 
                   href={mainSponsor.website} 
                   target="_blank" 
+                  rel="noopener noreferrer" 
                   className="bg-[#001845] text-white text-center py-4 px-8 rounded-xl font-bold hover:bg-blue-700 transition shadow-lg self-center md:self-start"
                 >
                   Website besuchen
