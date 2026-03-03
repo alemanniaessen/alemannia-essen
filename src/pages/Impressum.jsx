@@ -28,8 +28,8 @@ export default function Impressum() {
               </h2>
               <p className="text-gray-700 text-lg leading-relaxed font-medium">
                 Alemannia Essen 2017 e.V.<br />
-                Seumannstraße 123<br />
-                45326 Essen<br />
+                Haedenkampstraße 81<br />
+                45143 Essen<br />
                 Deutschland
               </p>
             </div>
@@ -40,37 +40,43 @@ export default function Impressum() {
                 <span className="text-3xl">📞</span> Kontakt
               </h2>
               <p className="text-gray-700 leading-relaxed">
-                <span className="font-bold">Telefon:</span> 0201 / 123 456 78<br />
-                <span className="font-bold">E-Mail:</span> info@alemannia-essen.de<br />
+                <span className="font-bold">E-Mail:</span> alemanniaessen@gmail.com<br />
                 <span className="font-bold">Web:</span> www.alemannia-essen.de
               </p>
             </div>
           </div>
         </div>
 
-        {/* 2. VERTRETUNG & REGISTER */}
+        {/* 2. VEREINSINFOS & BANK */}
         <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12 mb-8">
           <h2 className="text-2xl font-bold text-[#001845] mb-6 border-b pb-2">Vereinsinformationen</h2>
           
-          <div className="space-y-6 text-gray-700">
-            <div>
-              <h3 className="font-bold text-lg text-gray-900">Vertreten durch den Vorstand:</h3>
-              <p>Max Mustermann (1. Vorsitzender)</p>
-              <p>Sarah Beispiel (2. Vorsitzende)</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-gray-700">
+            
+            {/* Vertretung & Register */}
+            <div className="space-y-4">
+              <div>
+                <h3 className="font-bold text-lg text-gray-900">Vertreten durch den Vorstand:</h3>
+                <p>[Vorname Nachname 1. Vorsitzender]</p>
+                <p>[Vorname Nachname 2. Vorsitzender]</p>
+              </div>
+
+              <div>
+                <h3 className="font-bold text-lg text-gray-900">Registereintrag:</h3>
+                <p>Eintragung im Vereinsregister.</p>
+                <p>Registergericht: Amtsgericht Essen</p>
+                <p>Registernummer: VR [NUMMER]</p>
+              </div>
             </div>
 
-            <div>
-              <h3 className="font-bold text-lg text-gray-900">Registereintrag:</h3>
-              <p>Eintragung im Vereinsregister.</p>
-              <p>Registergericht: Amtsgericht Essen</p>
-              <p>Registernummer: VR 12345 {/* HIER DEINE NUMMER EINTRAGEN */}</p>
-            </div>
-            
-            <div>
-              <h3 className="font-bold text-lg text-gray-900">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</h3>
-              <p>Max Mustermann</p>
-              <p>Seumannstraße 123</p>
-              <p>45326 Essen</p>
+            {/* Bankverbindung */}
+            <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+              <h3 className="font-bold text-lg text-[#001845] mb-2">Bankverbindung:</h3>
+              <p className="font-mono text-sm text-gray-600 mb-1">IBAN:</p>
+              <p className="text-xl font-bold tracking-wider text-blue-900 break-all">
+                DE22 3605 0105 0001 1944 13
+              </p>
+              <p className="text-sm text-gray-500 mt-2">Sparkasse Essen</p>
             </div>
           </div>
         </div>

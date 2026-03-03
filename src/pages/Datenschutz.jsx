@@ -40,79 +40,64 @@ export default function Datenschutz() {
             </p>
             <div className="mt-4 bg-gray-50 p-4 rounded-lg border border-gray-200 font-medium text-gray-900">
               Alemannia Essen 2017 e.V.<br />
-              Seumannstraße 123<br />
-              45326 Essen<br />
-              E-Mail: info@alemannia-essen.de
+              Haedenkampstraße 81<br />
+              45143 Essen<br />
+              E-Mail: alemanniaessen@gmail.com
             </div>
           </section>
 
-          {/* Sektion 3 */}
+          {/* Sektion 3 - HOSTING (Netlify) */}
           <section>
             <h2 className="text-xl font-bold text-[#001845] mb-3 flex items-center gap-2">
               <span className="bg-blue-100 text-blue-800 rounded px-2 py-1 text-sm">3</span>
-              Datenerfassung auf unserer Website
+              Hosting durch Netlify
             </h2>
-            
-            <h3 className="font-bold text-gray-900 mt-4">Server-Log-Dateien</h3>
-            <p className="mb-2">
-              Der Provider der Seiten erhebt und speichert automatisch Informationen in so genannten Server-Log-Dateien, die Ihr Browser automatisch an uns übermittelt. Dies sind:
+            <p className="mb-4">
+              Wir hosten unsere Website bei <strong>Netlify, Inc.</strong> (44 Montgomery Street, Suite 300, San Francisco, California 94104, USA).
             </p>
-            <ul className="list-disc pl-5 space-y-1 mb-4 text-sm text-gray-600">
-              <li>Browsertyp und Browserversion</li>
-              <li>Verwendetes Betriebssystem</li>
-              <li>Referrer URL</li>
-              <li>Hostname des zugreifenden Rechners</li>
-              <li>Uhrzeit der Serveranfrage</li>
-              <li>IP-Adresse</li>
-            </ul>
-            <p>
-              Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. Grundlage für die Datenverarbeitung ist Art. 6 Abs. 1 lit. f DSGVO.
+            <p className="mb-4">
+              Wenn Sie unsere Website besuchen, erfasst Netlify verschiedene Logfiles inklusive Ihrer IP-Adressen. 
+              Dies ist notwendig, um die Website darzustellen und deren Sicherheit zu gewährleisten (Art. 6 Abs. 1 lit. f DSGVO).
             </p>
-
-            <h3 className="font-bold text-gray-900 mt-6">Kontaktformular / E-Mail</h3>
             <p>
-              Wenn Sie uns per Kontaktformular oder E-Mail Anfragen zukommen lassen, werden Ihre Angaben zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. 
-              Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
+              Weitere Informationen zum Datenschutz von Netlify finden Sie hier: 
+              <a href="https://www.netlify.com/privacy/" target="_blank" rel="noreferrer" className="text-blue-600 hover:underline ml-1">
+                Netlify Datenschutzrichtlinie
+              </a>.
             </p>
           </section>
 
-          {/* Sektion 4 */}
+          {/* Sektion 4 - DATENERFASSUNG & WEB3FORMS */}
           <section>
             <h2 className="text-xl font-bold text-[#001845] mb-3 flex items-center gap-2">
               <span className="bg-blue-100 text-blue-800 rounded px-2 py-1 text-sm">4</span>
-              Welche Rechte haben Sie bezüglich Ihrer Daten?
+              Kontaktformular & E-Mail (Web3Forms)
             </h2>
+            
+            <h3 className="font-bold text-gray-900 mt-4">Kontaktformular via Web3Forms</h3>
             <p className="mb-4">
-              Sie haben jederzeit das Recht:
+              Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage bei uns gespeichert.
             </p>
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <li className="flex items-start gap-2">
-                <span className="text-green-500 font-bold">✓</span>
-                <span>Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten Daten zu erhalten.</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-green-500 font-bold">✓</span>
-                <span>Die Berichtigung oder Löschung dieser Daten zu verlangen.</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-green-500 font-bold">✓</span>
-                <span>Die Einschränkung der Datenverarbeitung zu fordern.</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-green-500 font-bold">✓</span>
-                <span>Beschwerde bei der zuständigen Aufsichtsbehörde einzureichen.</span>
-              </li>
-            </ul>
+            <p className="mb-4 bg-yellow-50 p-4 rounded-lg border border-yellow-200 text-sm">
+              <strong>Wichtiger Hinweis:</strong> Wir nutzen für den Versand des Kontaktformulars den Dienst <strong>Web3Forms</strong>. 
+              Die Daten, die Sie in das Formular eingeben, werden zur technischen Übermittlung an Web3Forms weitergeleitet und von dort per E-Mail an uns gesendet. 
+              Dies erfolgt auf Grundlage unseres berechtigten Interesses an einer leichten Kontaktaufnahme (Art. 6 Abs. 1 lit. f DSGVO).
+            </p>
+
+            <h3 className="font-bold text-gray-900 mt-6">Anfragen per E-Mail oder Telefon</h3>
+            <p>
+              Wenn Sie uns per E-Mail oder Telefon kontaktieren, wird Ihre Anfrage inklusive aller daraus hervorgehenden personenbezogenen Daten (Name, Anfrage) zum Zwecke der Bearbeitung Ihres Anliegens bei uns gespeichert und verarbeitet. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
+            </p>
           </section>
 
-          {/* Sektion 5 */}
+          {/* Sektion 5 - RECHTE */}
           <section>
             <h2 className="text-xl font-bold text-[#001845] mb-3 flex items-center gap-2">
               <span className="bg-blue-100 text-blue-800 rounded px-2 py-1 text-sm">5</span>
-              Hosting
+              Ihre Rechte
             </h2>
-            <p>
-              Diese Seite wird bei einem externen Dienstleister gehostet (z.B. Vercel, Netlify oder Strato). Die personenbezogenen Daten, die auf dieser Website erfasst werden, werden auf den Servern des Hosters gespeichert.
+            <p className="mb-4">
+              Sie haben jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung sowie ein Recht auf Berichtigung oder Löschung dieser Daten.
             </p>
           </section>
 

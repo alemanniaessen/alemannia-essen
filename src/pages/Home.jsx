@@ -18,7 +18,7 @@ export default function Home() {
       id: 3,
       titel: "Ein bisschen verspätet: Rückblick auf die Jugendfeier",
       kategorie: "Jugend",
-      datum: "02.03.2026",
+      datum: "02.02.2026",
       bild: "/news_2.png",
       vorschau: "Besser spät als nie! Wir blicken zurück auf einen wunderbaren Abend unserer D- bis G-Junioren. Ein Fest voller Lachen, Gemeinschaft und Zusammenhalt."
     },
@@ -26,7 +26,7 @@ export default function Home() {
       id: 2,
       titel: "Trikots für Ghana: Kobby als Brücke nach Accra",
       kategorie: "Vereinsleben",
-      datum: "02.03.2026",
+      datum: "02.01.2026",
       bild: "/news_1.png",
       vorschau: "Unser Kobby war wieder in Ghana unterwegs und hatte eine Überraschung im Gepäck: Trikots für ein lokales Team. Eine tolle Aktion!"
     }

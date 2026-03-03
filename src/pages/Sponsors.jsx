@@ -2,26 +2,34 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function Sponsors() {
-  // 1. HAUPTSPONSOR
+  // 1. HAUPTSPONSOR (Sponsor 1)
   const mainSponsor = {
-    name: "Sparkasse Essen",
-    logo: "https://placehold.co/800x300/001845/ffffff?text=Sparkasse+Essen",
-    website: "https://www.sparkasse-essen.de",
+    name: "Hauptsponsor",
+    logo: "/sponsor1.jpg", // Bilddatei: sponsor1.png
+    website: "#",
     slogan: "Starker Partner für unsere Region."
   };
 
-  // 2. PREMIUM PARTNER
+  // 2. PREMIUM PARTNER (Sponsor 2 bis 5)
   const premiumPartners = [
-    { name: "Autohaus Müller", logo: "https://placehold.co/500x250?text=Autohaus+Müller", website: "#" },
-    { name: "Stadtwerke Essen", logo: "https://placehold.co/500x250?text=Stadtwerke+Essen", website: "#" },
+    { name: "Premium Partner 1", logo: "/sponsor2.jpg", website: "#" },
+    { name: "Premium Partner 2", logo: "/sponsor3.jpg", website: "#" },
+    { name: "Premium Partner 3", logo: "/sponsor4.jpg", website: "#" },
+    { name: "Premium Partner 4", logo: "/sponsor5.jpg", website: "#" },
   ];
 
-  // 3. BUSINESS PARTNER
+  // 3. BUSINESS PARTNER (Sponsor 6 bis 15)
   const businessPartners = [
-    { name: "Bäckerei Schmidt", logo: "https://placehold.co/400x200?text=Bäckerei", website: "#" },
-    { name: "Sport Goal", logo: "https://placehold.co/400x200?text=Sport+Goal", website: "#" },
-    { name: "Restaurant Post", logo: "https://placehold.co/400x200?text=Restaurant", website: "#" },
-    { name: "Bau Hoch", logo: "https://placehold.co/400x200?text=Bau+Hoch", website: "#" },
+    { name: "Partner 1", logo: "/sponsor6.jpg", website: "#" },
+    { name: "Partner 2", logo: "/sponsor7.jpg", website: "#" },
+    { name: "Partner 3", logo: "/sponsor8.jpg", website: "#" },
+    { name: "Partner 4", logo: "/sponsor9.jpg", website: "#" },
+    { name: "Partner 5", logo: "/sponsor10.jpg", website: "#" },
+    { name: "Partner 6", logo: "/sponsor11.jpg", website: "#" },
+    { name: "Partner 7", logo: "/sponsor12.jpg", website: "#" },
+    { name: "Partner 8", logo: "/sponsor13.jpeg", website: "#" },
+    { name: "Partner 9", logo: "/sponsor14.jpeg", website: "#" },
+    { name: "Partner 10", logo: "/sponsor15.jpeg", website: "#" },
   ];
 
   return (
@@ -103,7 +111,7 @@ export default function Sponsors() {
             <div className="h-[1px] bg-gray-200 w-full"></div>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
             {businessPartners.map((p, i) => (
               <div 
                 key={i}
