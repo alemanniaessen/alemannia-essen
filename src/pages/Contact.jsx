@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-// --- ICONS ---
+// --- ICONS (Bleiben gleich) ---
 const IconMap = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>;
 const IconMail = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>;
 const IconPhone = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>;
@@ -18,14 +18,45 @@ export default function Contact() {
 
   const [status, setStatus] = useState(null);
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  // --- HIER NEU: E-Mail Versand mit Web3Forms ---
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    // HIER DEINEN KEY EINFÜGEN:
+    const accessKey = "ecbcedad-d224-446d-a712-15d8596bdc44"; 
+
+    // Die Daten für Web3Forms vorbereiten
+    const data = {
+      access_key: accessKey,
+      ...formData,
+      subject: `Neue Nachricht von ${formData.name}: ${formData.betreff}` // Betreff in der Email
+    };
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setStatus("success");
+        setFormData({ name: "", email: "", betreff: "", nachricht: "" }); // Formular leeren
+      } else {
+        alert("Fehler beim Senden: " + result.message);
+      }
+    } catch (error) {
+      alert("Ein Fehler ist aufgetreten.");
+    }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setStatus("success");
-    setFormData({ name: "", email: "", betreff: "", nachricht: "" });
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   return (
@@ -51,8 +82,8 @@ export default function Contact() {
             <h2 className="text-xl font-bold text-[#001845] mb-6">Direkt vernetzen</h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               
-              {/* WhatsApp */}
-              <a href="#" className="flex flex-col items-center justify-center p-4 rounded-xl bg-green-50 text-green-600 hover:bg-green-600 hover:text-white transition shadow-sm border border-green-100">
+              {/* WhatsApp - HIER WAR DER FEHLER: href="#" wurde zu href="https://wa.me" geändert */}
+              <a href="https://wa.me" target="_blank" rel="noreferrer" className="flex flex-col items-center justify-center p-4 rounded-xl bg-green-50 text-green-600 hover:bg-green-600 hover:text-white transition shadow-sm border border-green-100">
                 <IconWhatsApp /> 
                 <span className="font-bold mt-2">WhatsApp</span>
               </a>
@@ -136,7 +167,6 @@ export default function Contact() {
         </div>
 
         {/* ---------------- RECHTE SPALTE ---------------- */}
-        {/* Durch 'flex flex-col h-full' nimmt sie die gleiche Höhe an wie links */}
         <div className="flex flex-col h-full space-y-8">
           
           {/* Adress-Box */}
@@ -157,7 +187,7 @@ export default function Contact() {
                 <div className="bg-blue-100 p-3 rounded-full text-blue-600"><IconMail /></div>
                 <div>
                   <p className="font-bold text-gray-800">E-Mail</p>
-                  <a href="mailto:alemanniaessen@gmail.com" className="text-blue-600 hover:underline">alemanniaessen@gmail.com</a>
+                  <a href="mailto:info@alemannia-essen.de" className="text-blue-600 hover:underline">info@alemannia-essen.de</a>
                 </div>
               </div>
 
@@ -172,7 +202,6 @@ export default function Contact() {
           </div>
 
           {/* Große Karte - MIT FLEX-GROW DAMIT SIE SICH STRECKT */}
-          {/* flex-grow füllt den Rest auf, min-h sorgt dafür, dass sie mobil nicht zu klein ist */}
           <div className="bg-white rounded-2xl shadow-lg overflow-hidden border-4 border-white flex-grow min-h-[400px]">
             <iframe 
               title="Vereinsgelände Karte"
