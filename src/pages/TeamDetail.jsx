@@ -1,0 +1,297 @@
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+
+// --- WICHTIG: HIER DEINE ECHTEN DATEN EINFÜGEN ---
+// Gehe zu fussball.de -> Widget erstellen -> Tabelle -> Kopiere NUR den Link aus dem src="..."
+// Beispiel: "https://www.fussball.de/widget2/-/schluessel/12345..."
+const FUSSBALL_DE_LINK = "https://www.fussball.de/widget2/-/schluessel/HIER_MUSS_DEIN_CODE_REIN"; 
+
+
+export default function TeamDetail() {
+  const { team } = useParams();
+  const [activeTab, setActiveTab] = useState("kader");
+  const [playerPerformance, setPlayerPerformance] = useState({});
+
+  // --- DATEN ---
+  const daten = {
+    "erste": {
+      name: "1. Mannschaft",
+      liga: "Kreisliga A",
+      teamBild: "/erste18.JPG", 
+      trainingsort: "Sportanlage Alemannia Essen ",
+      trainingszeiten: [
+        { tag: "Mittwoch", zeit: "19:30 - 21:30 Uhr" },
+        { tag: "Freitag", zeit: "19:30 - 21:30 Uhr" },
+      ],
+      spieler: [
+        { name: "Kevin Keeper", vorname: "Kevin", nachname: "Keeper", position: "Torwart", nummer: 1, bild: "/erste9.JPG" },
+        { name: "Marc Schluss", vorname: "Marc", nachname: "Schluss", position: "Torwart", nummer: 22, bild: "/erste9.JPG" },
+        { name: "Max Abwehr", vorname: "Max", nachname: "Abwehr", position: "Abwehr", nummer: 4, bild: "/erste8.JPG" },
+        { name: "Tim Tackle", vorname: "Tim", nachname: "Tackle", position: "Abwehr", nummer: 5, bild: "/erste12.JPG" },
+        { name: "Sven Safe", vorname: "Sven", nachname: "Safe", position: "Abwehr", nummer: 2, bild: "/erste20.JPG" },
+        { name: "Leo Links", vorname: "Leo", nachname: "Links", position: "Abwehr", nummer: 3, bild: "/erste21.JPG" },
+        { name: "Ben Block", vorname: "Ben", nachname: "Block", position: "Abwehr", nummer: 15, bild: "/erste22.JPG" },
+        { name: "Osman Durmus", vorname: "Osman", nachname: "Durmus", position: "Mittelfeld", nummer: 10, bild: "/erste4.JPG" },
+        { name: "Recep Durmus", vorname: "Recep", nachname: "Durmus", position: "Mittelfeld", nummer: 8, bild: "/erste6.JPG" },
+        { name: "Luka Lauf", vorname: "Luka", nachname: "Lauf", position: "Mittelfeld", nummer: 6, bild: "/erste10.JPG" },
+        { name: "Fabian Flanke", vorname: "Fabian", nachname: "Flanke", position: "Mittelfeld", nummer: 7, bild: "/erste13.JPG" },
+        { name: "Mo Mitte", vorname: "Mo", nachname: "Mitte", position: "Mittelfeld", nummer: 13, bild: "/erste19.JPG" },
+        { name: "Ali Assist", vorname: "Ali", nachname: "Assist", position: "Mittelfeld", nummer: 17, bild: "/erste26.JPG" },
+        { name: "Abou Touray", vorname: "Abou", nachname: "Touray", position: "Angriff", nummer: 9, bild: "/erste1.JPG" },
+        { name: "Kagola Traore", vorname: "Kagola", nachname: "Traore", position: "Angriff", nummer: 14, bild: "/erste10.JPG" },
+        { name: "Sam Sturm", vorname: "Sam", nachname: "Sturm", position: "Angriff", nummer: 11, bild: "/erste14.JPG" },
+        { name: "Jan Joker", vorname: "Jan", nachname: "Joker", position: "Angriff", nummer: 18, bild: "/erste15.JPG" },
+        { name: "Nick Netz", vorname: "Nick", nachname: "Netz", position: "Angriff", nummer: 19, bild: "/erste17.JPG" },
+        { name: "Tom Treffer", vorname: "Tom", nachname: "Treffer", position: "Angriff", nummer: 20, bild: "/erste23.JPG" },
+        { name: "Paul Power", vorname: "Paul", nachname: "Power", position: "Angriff", nummer: 21, bild: "/erste29.JPG" },
+      ],
+      trainer: [
+        { name: "Mehmet Kaya", rolle: "Cheftrainer", bild: "/erste5.JPG" },
+        { name: "Ali Demir", rolle: "Co-Trainer", bild: "/erste28.JPG" },
+        { name: "Stefan Stopp", rolle: "Torwart-Trainer", bild: "/erste9.JPG" },
+        { name: "Bernd Fit", rolle: "Athletik-Trainer", bild: "/erste25.JPG" },
+        { name: "Christian Orga", rolle: "Betreuer", bild: "/erste9.JPG" },
+      ]
+    },
+    "dritte": {
+      name: "2. Mannschaft", 
+      liga: "Kreisliga B",
+      teamBild: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1200",
+      trainingsort: "Sportanlage Seumannstraße (Platz 1)",
+      trainingszeiten: [
+        { tag: "Mittwoch", zeit: "19:00 - 20:30 Uhr" },
+        { tag: "Freitag", zeit: "19:00 - 20:30 Uhr" }
+      ],
+      spieler: [
+        { name: "Kevin Keeper", vorname: "Kevin", nachname: "Keeper", position: "Torwart", nummer: 1, bild: null },
+      ],
+      trainer: [
+        { name: "Mehmet Kaya", rolle: "Cheftrainer", bild: null },
+      ]
+    }
+  };
+
+  const info = daten[team] || daten["erste"];
+
+  // --- API SIMULATION ---
+  useEffect(() => {
+    if (team === "erste" || !team) {
+      const mockApiStats = {
+        "Kevin Keeper": { spiele: 15, tore: 0 },
+        "Marc Schluss": { spiele: 2, tore: 0 },
+        "Max Abwehr": { spiele: 12, tore: 1 },
+        "Tim Tackle": { spiele: 14, tore: 0 },
+        "Sven Safe": { spiele: 10, tore: 0 },
+        "Leo Links": { spiele: 13, tore: 2 },
+        "Ben Block": { spiele: 5, tore: 0 },
+        "Osman Durmus": { spiele: 12, tore: 2 },
+        "Recep Durmus": { spiele: 12, tore: 4 },
+        "Luka Lauf": { spiele: 14, tore: 1 },
+        "Fabian Flanke": { spiele: 11, tore: 3 },
+        "Mo Mitte": { spiele: 8, tore: 0 },
+        "Ali Assist": { spiele: 9, tore: 1 },
+        "Abou Touray": { spiele: 14, tore: 12 },
+        "Kagola Traore": { spiele: 11, tore: 8 },
+        "Sam Sturm": { spiele: 13, tore: 15 },
+        "Jan Joker": { spiele: 10, tore: 4 },
+        "Nick Netz": { spiele: 4, tore: 1 },
+        "Tom Treffer": { spiele: 6, tore: 3 },
+        "Paul Power": { spiele: 3, tore: 0 }
+      };
+      setPlayerPerformance(mockApiStats);
+    } else {
+        setPlayerPerformance({});
+    }
+  }, [team]);
+
+  return (
+    <div className="bg-[#f8fafc] min-h-screen pb-24 font-sans">
+      
+      {/* 1. HERO AREA */}
+      <div className="relative h-[50vh] min-h-[400px] w-full bg-[#001845]">
+        <img src={info.teamBild} className="w-full h-full object-cover opacity-60" alt="Team Hintergrund" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#f8fafc] via-transparent to-transparent"></div>
+        <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
+          <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tighter italic text-center">{info.name}</h1>
+          <p className="text-blue-400 font-bold tracking-[0.3em] uppercase">{info.liga}</p>
+        </div>
+      </div>
+
+      {/* 2. TABS */}
+      <div className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b flex justify-center gap-10">
+        {["kader", "tabelle", "spielplan"].map(tab => (
+          <button key={tab} onClick={() => setActiveTab(tab)} className={`py-5 text-xs font-black uppercase tracking-widest ${activeTab === tab ? "text-blue-600 border-b-4 border-blue-600" : "text-gray-400"}`}>
+            {tab}
+          </button>
+        ))}
+      </div>
+
+      {/* 3. CONTENT */}
+      <div className="max-w-7xl mx-auto px-6 mt-16">
+        
+        {/* === KADER ANSICHT === */}
+        {activeTab === "kader" && (
+          <div className="space-y-16 animate-in fade-in slide-in-from-bottom-4 duration-500">
+            {/* TRAININGS INFO BOX */}
+            <div className="bg-white rounded-[2rem] p-8 shadow-sm border border-blue-100 relative overflow-hidden">
+               <div className="absolute top-0 left-0 w-3 h-full bg-blue-600"></div>
+               <div className="flex flex-col md:flex-row gap-12 pl-4">
+                  <div className="flex-1">
+                      <h3 className="text-gray-400 font-bold uppercase text-xs tracking-widest mb-3">Trainingsort</h3>
+                      <div className="flex items-start gap-3">
+                         <span className="text-2xl mt-1">📍</span>
+                         <div>
+                            <p className="text-2xl font-black text-[#001845] leading-tight">{info.trainingsort}</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Haedenkampstraße+81,+45143+Essen" target="_blank" rel="noreferrer" className="text-blue-500 text-sm font-bold hover:underline mt-1 inline-block">Route planen →</a>
+                         </div>
+                      </div>
+                  </div>
+                  <div className="hidden md:block w-[1px] bg-gray-100"></div>
+                  <div className="flex-1">
+                      <h3 className="text-gray-400 font-bold uppercase text-xs tracking-widest mb-3">Trainingszeiten</h3>
+                      <ul className="space-y-3">
+                         {info.trainingszeiten.map((z, idx) => (
+                            <li key={idx} className="flex items-center gap-3">
+                               <span className="text-blue-600 font-bold text-lg">🕒</span>
+                               <span className="font-bold text-slate-700 text-lg">
+                                   {z.tag}: <span className="text-[#001845]">{z.zeit}</span>
+                               </span>
+                            </li>
+                         ))}
+                      </ul>
+                  </div>
+               </div>
+            </div>
+
+            {/* TRAINER TEAM */}
+            <section>
+              <div className="flex items-center gap-4 mb-10">
+                <h2 className="text-3xl font-black text-[#001845] uppercase tracking-tighter italic">Trainer & Staff</h2>
+                <div className="h-1 bg-blue-600 flex-grow rounded-full"></div>
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                {info.trainer.map((t, i) => (
+                  <div key={i} className="bg-white p-6 rounded-3xl shadow-sm border border-gray-100 text-center group hover:shadow-lg transition">
+                    <div className="w-20 h-20 bg-gray-100 rounded-full mx-auto mb-4 flex items-center justify-center text-[#001845] font-bold border-2 border-blue-50 overflow-hidden relative">
+                      {t.bild ? (
+                        <img src={t.bild} className="w-full h-full object-cover" alt={t.name} />
+                      ) : (
+                        <span>?</span>
+                      )}
+                    </div>
+                    <h4 className="font-black text-[#001845] uppercase text-sm leading-tight">{t.name}</h4>
+                    <p className="text-blue-500 text-[10px] font-bold uppercase mt-1">{t.rolle}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SPIELER NACH POSITIONEN */}
+            {["Torwart", "Abwehr", "Mittelfeld", "Angriff"].map(pos => (
+              <section key={pos}>
+                <div className="flex items-center gap-4 mb-10">
+                  <h2 className="text-3xl font-black text-[#001845] uppercase tracking-tighter italic">{pos}</h2>
+                  <div className="h-[1px] bg-gray-200 flex-grow"></div>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                  {info.spieler.filter(p => p.position === pos).map((p, i) => {
+                    const performance = playerPerformance[p.name] || { spiele: "?", tore: "?" };
+                    const combinedPlayer = { ...p, ...performance };
+                    return <PlayerCard key={i} player={combinedPlayer} />;
+                  })}
+                </div>
+              </section>
+            ))}
+          </div>
+        )}
+
+        {/* === TABELLEN ANSICHT === */}
+        {activeTab === "tabelle" && (
+           <div className="max-w-4xl mx-auto animate-in fade-in zoom-in duration-300 min-h-[500px]">
+              {/* Hier nutzen wir die integrierte Tabelle (siehe unten) */}
+              <InternalTabelle link={FUSSBALL_DE_LINK} />
+           </div>
+        )}
+
+        {/* === SPIELPLAN ANSICHT === */}
+        {activeTab === "spielplan" && (
+           <div className="text-center py-20 bg-white rounded-3xl border border-gray-100 shadow-sm animate-in fade-in zoom-in duration-300">
+              <h3 className="text-2xl text-gray-400 font-bold uppercase">Spielplan wird geladen...</h3>
+           </div>
+        )}
+
+      </div>
+    </div>
+  );
+}
+
+// --- PLAYER CARD COMPONENT ---
+function PlayerCard({ player }) {
+  return (
+    <div className="group bg-white rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-50 relative">
+      <div className="h-80 bg-slate-100 overflow-hidden relative">
+        <div className="absolute top-4 left-6 text-6xl font-black text-white/30 z-10 group-hover:text-blue-600/20 transition-colors">
+          #{player.nummer}
+        </div>
+        {player.bild ? (
+          <img src={player.bild} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt={player.name} />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center text-slate-300 font-black text-4xl bg-gradient-to-br from-slate-100 to-slate-200 uppercase">
+             {player.nachname[0]}
+          </div>
+        )}
+      </div>
+      <div className="p-6">
+        <h3 className="text-2xl font-black text-[#001845] uppercase leading-none italic">
+          <span className="text-blue-600 block text-xs not-italic tracking-widest mb-1">{player.position}</span>
+          {player.vorname} <br/> {player.nachname}
+        </h3>
+        <div className="flex gap-4 mt-4 pt-4 border-t border-gray-50">
+          <div className="text-center">
+            <p className="text-[10px] text-gray-400 font-bold uppercase">Spiele</p>
+            <p className="font-black text-[#001845]">{player.spiele}</p>
+          </div>
+          <div className="text-center">
+            <p className="text-[10px] text-gray-400 font-bold uppercase text-blue-500">Tore</p>
+            <p className="font-black text-blue-600">{player.tore}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// --- TABELLEN COMPONENT (DIREKT HIER EINGEBAUT) ---
+function InternalTabelle({ link }) {
+  useEffect(() => {
+    // Falls kein Link da ist, nichts tun
+    if (!link || link.includes("HIER_MUSS_DEIN_CODE_REIN")) return;
+
+    const script = document.createElement("script");
+    script.src = link;
+    script.type = "text/javascript";
+    script.async = true;
+    
+    const container = document.getElementById('fussball-de-container');
+    if (container) {
+      container.innerHTML = ""; // Leeren
+      container.appendChild(script);
+    }
+  }, [link]);
+
+  return (
+    <div className="w-full bg-white shadow-lg border rounded-xl p-4 min-h-[500px]">
+       <h3 className="text-2xl font-black text-[#001845] mb-4 uppercase text-center">Aktuelle Tabelle</h3>
+       
+       <div id="fussball-de-container" className="flex justify-center items-center min-h-[200px]">
+          {link && link.includes("HIER_MUSS_DEIN_CODE_REIN") ? (
+            <div className="text-red-500 font-bold p-4 border border-red-200 bg-red-50 rounded">
+               ⚠️ Bitte trage deinen Fussball.de Link ganz oben im Code ein!
+            </div>
+          ) : (
+            <p className="text-gray-400">Lade Tabelle von fussball.de...</p>
+          )}
+       </div>
+    </div>
+  );
+}
