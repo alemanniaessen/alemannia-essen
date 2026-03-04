@@ -1,40 +1,29 @@
 import React from 'react';
 
-// Kleines Icon für E-Mail (optional)
-const MailIcon = () => (
-  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-  </svg>
-);
-
 export default function Vorstand() {
   const vorstand = [
     {
       name: "Max Mustermann",
       rolle: "1. Vorsitzender",
-      bild: "/1.jpeg", // Pfad zu deinem Bild
-      email: "vorstand1@alemannia-essen.de",
+      bild: "/1.jpeg", 
       motto: "Gemeinsam stark für die Zukunft."
     },
     {
       name: "Sarah Beispiel",
       rolle: "2. Vorsitzende",
       bild: "/2.png",
-      email: "vorstand2@alemannia-essen.de",
       motto: "Jugendarbeit ist unser Fundament."
     },
     {
       name: "Thomas Müller",
       rolle: "Kassierer",
       bild: "/vorstand3.jpg",
-      email: "kasse@alemannia-essen.de",
       motto: "Transparenz und Fairness."
     },
     {
       name: "Julia Meyer",
       rolle: "Geschäftsführerin",
       bild: "/vorstand4.jpg",
-      email: "geschaeftsstelle@alemannia-essen.de",
       motto: "Wir organisieren den Erfolg."
     },
   ];
@@ -42,7 +31,7 @@ export default function Vorstand() {
   return (
     <div className="bg-gray-50 min-h-screen pb-20">
       
-      {/* 1. HEADER (Konsistent mit About & Kontakt) */}
+      {/* 1. HEADER */}
       <div className="bg-[#001845] py-20 text-center text-white mb-16 shadow-lg">
         <h1 className="text-4xl md:text-5xl font-extrabold uppercase tracking-wider mb-4">
           Unser Vorstand
@@ -64,15 +53,13 @@ export default function Vorstand() {
             >
               
               {/* Bild Bereich */}
-              <div className="h-64 overflow-hidden relative bg-gray-200">
-                {/* Fallback, falls kein Bild da ist, zeigen wir einen Platzhalter */}
+              <div className="h-72 overflow-hidden relative bg-gray-200">
                 <img
                   src={person.bild}
                   alt={person.name}
                   onError={(e) => {e.target.src = "https://ui-avatars.com/api/?name=" + person.name + "&background=001845&color=fff&size=512"}}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                {/* Overlay Farbverlauf */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#001845]/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
                   <span className="text-white font-semibold text-sm tracking-widest uppercase">
                     Alemannia Essen
@@ -81,10 +68,7 @@ export default function Vorstand() {
               </div>
 
               {/* Text Bereich */}
-              <div className="p-6 text-center relative">
-                {/* Blaue Linie oben */}
-                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-1 bg-blue-600 rounded-full hidden group-hover:block transition-all"></div>
-
+              <div className="p-6 text-center">
                 <p className="text-blue-600 text-xs font-bold uppercase tracking-widest mb-2">
                   {person.rolle}
                 </p>
@@ -92,32 +76,27 @@ export default function Vorstand() {
                   {person.name}
                 </h3>
                 
-                {/* Kleines Motto oder Zitat */}
-                <p className="text-gray-500 text-sm italic mb-6">
+                <p className="text-gray-500 text-sm italic">
                   "{person.motto}"
                 </p>
-
-                {/* Email Button */}
-                <a 
-                  href={`mailto:${person.email}`} 
-                  className="inline-flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors text-sm font-medium border border-gray-200 px-4 py-2 rounded-full hover:bg-blue-50"
-                >
-                  <MailIcon /> Kontaktieren
-                </a>
               </div>
             </div>
           ))}
 
         </div>
         
-        {/* Zusatz-Info */}
+        {/* Zusatz-Info / Engagement */}
         <div className="mt-20 text-center bg-white p-10 rounded-2xl shadow-sm border border-gray-200 max-w-4xl mx-auto">
           <h3 className="text-2xl font-bold text-[#001845] mb-4">Du möchtest dich engagieren?</h3>
           <p className="text-gray-600 mb-6">
             Wir suchen immer engagierte Mitglieder, die Lust haben, Verantwortung zu übernehmen oder Projekte zu unterstützen.
           </p>
-          <a href="/kontakt" className="text-blue-600 font-bold hover:underline">
-            Schreib uns eine Nachricht →
+          {/* Link führt nun direkt zur Kontaktseite */}
+          <a 
+            href="/kontakt" 
+            className="inline-block bg-blue-600 text-white font-bold px-8 py-3 rounded-full hover:bg-blue-700 transition-colors shadow-md"
+          >
+            Jetzt Kontakt aufnehmen →
           </a>
         </div>
 

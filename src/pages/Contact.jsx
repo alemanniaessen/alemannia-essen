@@ -145,56 +145,57 @@ export default function Contact() {
         </div>
 
         {/* ---------------- RECHTE SPALTE ---------------- */}
-        <div className="flex flex-col h-full space-y-8">
-          <div className="bg-white rounded-2xl shadow-lg p-8 flex-shrink-0">
-            <h3 className="text-xl font-bold text-[#001845] mb-6 border-b pb-2">Hier findest du uns</h3>
-            <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="bg-blue-100 p-3 rounded-full text-blue-600"><IconMap /></div>
-                <div>
-                  <p className="font-bold text-gray-800 text-lg">Sportanlage Alemannia Essen</p>
-                  <p className="text-gray-600">Haedenkampstraße 81</p>
-                  <p className="text-gray-600">45143 Essen</p>
-                </div>
-              </div>
-             <div className="flex items-start gap-4">
-  <div className="bg-blue-100 p-3 rounded-full text-blue-600">
-    <IconMail />
+<div className="flex flex-col h-full space-y-8">
+  <div className="bg-white rounded-2xl shadow-lg p-8 flex-shrink-0">
+    <h3 className="text-xl font-bold text-[#001845] mb-6 border-b pb-2">Hier findest du uns</h3>
+    <div className="space-y-6">
+      
+      {/* ADRESSE KORRIGIERT */}
+      <div className="flex items-start gap-4">
+        <div className="bg-blue-100 p-3 rounded-full text-blue-600"><IconMap /></div>
+        <div>
+          <p className="font-bold text-gray-800 text-lg">Sportanlage Alemannia Essen</p>
+          <p className="text-gray-600">Haedenkampstraße 81</p>
+          <p className="text-gray-600">45143 Essen</p>
+        </div>
+      </div>
+
+      <div className="flex items-start gap-4">
+        <div className="bg-blue-100 p-3 rounded-full text-blue-600"><IconMail /></div>
+        <div>
+          <p className="font-bold text-gray-800 text-lg">E-Mail</p>
+          <a 
+            href="mailto:alemanniaessen@gmail.com" 
+            className="text-blue-600 hover:underline font-medium"
+          >
+            alemanniaessen@gmail.com
+          </a>
+        </div>
+      </div>
+
+      <div className="flex items-start gap-4">
+        <div className="bg-blue-100 p-3 rounded-full text-blue-600"><IconPhone /></div>
+        <div>
+          <p className="font-bold text-gray-800 text-lg">Telefon</p>
+          <p className="text-gray-600">Hier Nummer eintragen</p>
+        </div>
+      </div>
+    </div>
   </div>
-  <div>
-    <p className="font-bold text-gray-800 text-lg">E-Mail</p>
-    <a 
-      href="https://mail.google.com/mail/?view=cm&fs=1&to=alemanniaessen@gmail.com" 
-      target="_blank" 
-      rel="noreferrer" 
-      className="text-blue-600 hover:underline font-medium"
-    >
-      alemanniaessen@gmail.com
-    </a>
+
+  {/* GOOGLE MAPS - Achte darauf, die URL in src durch einen echten Google Maps Embed Link zu ersetzen */}
+  <div className="bg-white rounded-2xl shadow-lg overflow-hidden border-4 border-white flex-grow min-h-[400px]">
+    <iframe 
+      title="Vereinsgelände Karte"
+      width="100%" 
+      height="100%" 
+      style={{ border: 0, minHeight: "400px" }} 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2485.467471633539!2d6.985652576974136!3d51.46571581395561!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b8c2c06180356b%3A0x6b876483561a3f62!2sHaedenkampstra%C3%9Fe%2081%2C%2045143%20Essen!5e0!3m2!1sde!2sde!4v1700000000000"
+      allowFullScreen=""
+      loading="lazy"
+    ></iframe>
   </div>
 </div>
-              <div className="flex items-start gap-4">
-                <div className="bg-blue-100 p-3 rounded-full text-blue-600"><IconPhone /></div>
-                <div>
-                  <p className="font-bold text-gray-800">Telefon</p>
-                  <p className="text-gray-600">0176 ---------</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-2xl shadow-lg overflow-hidden border-4 border-white flex-grow min-h-[400px]">
-            <iframe 
-              title="Vereinsgelände Karte"
-              width="100%" 
-              height="100%" 
-              frameBorder="0" 
-              style={{ border: 0, minHeight: "100%" }} 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2486.234321312345!2d6.9856!3d51.4508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDI3JzAyLjkiTiA2wrA1OScxOC4yIkU!5e0!3m2!1sde!2sde!4v123456789"
-              allowFullScreen=""
-            ></iframe>
-          </div>
-        </div>
       </div>
     </div>
   );

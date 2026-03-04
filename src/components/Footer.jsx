@@ -107,10 +107,7 @@ export default function Footer() {
                className="bg-gray-800 p-3 rounded-lg hover:bg-pink-600 hover:text-white hover:-translate-y-1 transition-all duration-300 shadow-lg">
               <IconInsta />
             </a>
-            <a href="https://tiktok.com" target="_blank" rel="noreferrer" 
-               className="bg-gray-800 p-3 rounded-lg hover:bg-black hover:text-white hover:shadow-gray-700 hover:-translate-y-1 transition-all duration-300 shadow-lg">
-              <IconTiktok />
-            </a>
+            
           </div>
         </div>
 
