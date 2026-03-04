@@ -20,38 +20,38 @@ export default function TeamDetail() {
       spieler: [
         { name: "Samer Kouki", vorname: "Samer", nachname: "Kouki", position: "Torwart", nummer: 31, bild: "/samer.png" },
         { name: "Erbay Aslan", vorname: "Erbay", nachname: "Aslan", position: "Torwart", nummer: 16, bild: "/erste9.JPG" },
-        { name: "Dogukaan Yapar", vorname: "Dogukaan", nachname: "Yapar", position: "Torwart", nummer: 1, bild: "/erste8.JPG" },
-        { name: "Enes Rusan Carkci", vorname: "Enes", nachname: "Carkci", position: "Abwehr", nummer: 3, bild: "/erste12.JPG" },
+        { name: "Dogukaan Yapar", vorname: "Dogukaan", nachname: "Yapar", position: "Torwart", nummer: 1, bild: "/erste9.JPG" },
+        { name: "Enes Rusan Carkci", vorname: "Enes", nachname: "Carkci", position: "Abwehr", nummer: 3, bild: "/erste8.JPG" },
         { name: "Maximilian Danquah", vorname: "Maximilian", nachname: "Danquah", position: "Abwehr", nummer: 18, bild: "/erste20.JPG" },
-        { name: "Bekir Durmus", vorname: "Bekir", nachname: "Durmus", position: "Abwehr", nummer: 29, bild: "/erste21.JPG" },
-        { name: "Genart Ferizi", vorname: "Genart", nachname: "Ferizi", position: "Abwehr", nummer: 79, bild: "/erste22.JPG" },
+        { name: "Bekir Durmus", vorname: "Bekir", nachname: "Durmus", position: "Abwehr", nummer: 29, bild: "/erste3.JPG" },
+        { name: "Genart Ferizi", vorname: "Genart", nachname: "Ferizi", position: "Abwehr", nummer: 79, bild: "/erste12.JPG" },
         { name: "Can Hotoglu", vorname: "Can", nachname: "Hotoglu", position: "Abwehr", nummer: 17, bild: "/erste4.JPG" },
-        { name: "Emir Jasikovic", vorname: "Emir", nachname: "Jasikovic", position: "Abwehr", nummer: 94, bild: "/erste6.JPG" },
-        { name: "Mehmet Öztürk", vorname: "Mehmet", nachname: "Öztürk", position: "Abwehr", nummer: 21, bild: "/erste10.JPG" },
-        { name: "Oumar Touray Toure", vorname: "Oumar", nachname: "Touray Toure", position: "Abwehr", nummer: 2, bild: "/erste13.JPG" },
-        { name: "Melih Turan", vorname: "Melih", nachname: "Turan", position: "Abwehr", nummer: 4, bild: "/erste19.JPG" },
-        { name: "Ali Assist", vorname: "Ali", nachname: "Assist", position: "Mittelfeld", nummer: 80, bild: "/erste26.JPG" },
-        { name: "Abou Touray", vorname: "Abou", nachname: "Touray", position: "Mittelfeld", nummer: 70, bild: "/erste1.JPG" },
-        { name: "Kagola Traore", vorname: "Kagola", nachname: "Traore", position: "Mittelfeld", nummer: 7, bild: "/erste10.JPG" },
-        { name: "Sam Sturm", vorname: "Sam", nachname: "Sturm", position: "Mittelfeld", nummer: 19, bild: "/erste14.JPG" },
-        { name: "Jan Joker", vorname: "Jan", nachname: "Joker", position: "Mittelfeld", nummer: 23, bild: "/erste15.JPG" },
-        { name: "Nick Netz", vorname: "Nick", nachname: "Netz", position: "Mittelfeld", nummer: 10, bild: "/erste17.JPG" },
-        { name: "Tom Treffer", vorname: "Tom", nachname: "Treffer", position: "Mittelfeld", nummer: 61, bild: "/erste23.JPG" },
-        { name: "Paul Power", vorname: "Paul", nachname: "Power", position: "Mittelfeld", nummer: 99, bild: "/erste29.JPG" },
-        { name: "Abou Touray", vorname: "Abou", nachname: "Touray", position: "Mittelfeld", nummer: 11, bild: "/erste1.JPG" },
-        { name: "Kagola Traore", vorname: "Kagola", nachname: "Traore", position: "Angriff", nummer: 24, bild: "/erste10.JPG" },
-        { name: "Sam Sturm", vorname: "Sam", nachname: "Sturm", position: "Angriff", nummer: 77, bild: "/erste14.JPG" },
-        { name: "Jan Joker", vorname: "Jan", nachname: "Joker", position: "Angriff", nummer: 27, bild: "/erste15.JPG" },
-        { name: "Nick Netz", vorname: "Nick", nachname: "Netz", position: "Angriff", nummer: 8, bild: "/erste17.JPG" },
-        { name: "Tom Treffer", vorname: "Tom", nachname: "Treffer", position: "Angriff", nummer: 66, bild: "/erste23.JPG" },
-        { name: "Paul Power", vorname: "Paul", nachname: "Power", position: "Angriff", nummer: 9, bild: "/erste29.JPG" },
+        { name: "Emir Jasikovic", vorname: "Emir", nachname: "Jasikovic", position: "Abwehr", nummer: 94, bild: "/erste7.JPG" },
+        { name: "Mehmet Öztürk", vorname: "Mehmet", nachname: "Öztürk", position: "Abwehr", nummer: 21, bild: "/erste22.JPG" },
+        { name: "Oumar Touray Toure", vorname: "Oumar", nachname: "Touray Toure", position: "Abwehr", nummer: 2, bild: "/erste27.JPG" },
+        { name: "Melih Turan", vorname: "Melih", nachname: "Turan", position: "Abwehr", nummer: 4, bild: "/erste21.JPG" },
+        { name: "Osman Durmus", vorname: "Osman", nachname: "Durmus", position: "Mittelfeld", nummer: 80, bild: "/erste26.JPG" },
+        { name: "Recep Durmus", vorname: "Recep", nachname: "Durmus", position: "Mittelfeld", nummer: 70, bild: "/erste29.JPG" },
+        { name: "Kwabena Fobiri", vorname: "Kwabena", nachname: "Fobiri", position: "Mittelfeld", nummer: 7, bild: "/erste15.JPG" },
+        { name: "Justice Kaminski", vorname: "Justice", nachname: "Kaminski", position: "Mittelfeld", nummer: 19, bild: "/erste14.JPG" },
+        { name: "Denis Katsani", vorname: "Denis", nachname: "Katsani", position: "Mittelfeld", nummer: 23, bild: "/erste6.JPG" },
+        { name: "Faruk Kuduzovic", vorname: "Faruk", nachname: "Kuduzovic", position: "Mittelfeld", nummer: 10, bild: "/erste10.JPG" },
+        { name: "Inoc Nkrumah", vorname: "Inoc", nachname: "Nkrumah", position: "Mittelfeld", nummer: 61, bild: "/erste9.JPG" },
+        { name: "Oluwatosin Elijah Owolabi", vorname: "Oluwatosin Elijah", nachname: "Owolabi", position: "Mittelfeld", nummer: 99, bild: "/erste31.JPG" },
+        { name: "Marcel Wischnat", vorname: "Marcel", nachname: "Wischnat", position: "Mittelfeld", nummer: 11, bild: "/erste19.JPG" },
+        { name: "Wahim Jan", vorname: "Wahim", nachname: "Jan", position: "Angriff", nummer: 24, bild: "/erste9.JPG" },
+        { name: "Svyatoslav Kudrin", vorname: "Svyatoslav", nachname: "Kudrin", position: "Angriff", nummer: 77, bild: "/erste9.JPG" },
+        { name: "Dominik Milaszewski", vorname: "Dominik", nachname: "Milaszewski", position: "Angriff", nummer: 27, bild: "/erste23.JPG" },
+        { name: "Shawn Simon", vorname: "Shawn", nachname: "Simon", position: "Angriff", nummer: 8, bild: "/erste9.JPG" },
+        { name: "Abou Touray Toure", vorname: "Abou", nachname: "Touray Toure", position: "Angriff", nummer: 66, bild: "/erste1.JPG" },
+        { name: "Kagola Kourani Traore", vorname: "Kagola", nachname: "Kourani Traore", position: "Angriff", nummer: 9, bild: "/erste17.JPG" },
       ],
       trainer: [
         { name: "Serhat Hakan", rolle: "trainer", bild: "/erste5.JPG" },
         { name: "Recep Aker", rolle: "Co-Trainer", bild: "/erste28.JPG" },
         { name: "Bekir Kabacan", rolle: "Torwart-Trainer", bild: "/erste9.JPG" },
         { name: "Nikola Lazic", rolle: "Physiotherapeut", bild: "/erste25.JPG" },
-        { name: "Fatih Kabuk", rolle: "Sportlicher Leiter", bild: "/erste9.JPG" },
+        { name: "Fatih Kabuk", rolle: "Sportlicher Leiter", bild: "/erste11.JPG" },
       ]
     },
     "zweite": {
@@ -204,6 +204,7 @@ export default function TeamDetail() {
 }
 
 // --- PLAYER CARD COMPONENT ---
+// --- PLAYER CARD COMPONENT ---
 function PlayerCard({ player }) {
   return (
     <div className="group bg-white rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-50 relative">
@@ -224,16 +225,7 @@ function PlayerCard({ player }) {
           <span className="text-blue-600 block text-xs not-italic tracking-widest mb-1">{player.position}</span>
           {player.vorname} <br/> {player.nachname}
         </h3>
-        <div className="flex gap-4 mt-4 pt-4 border-t border-gray-50">
-          <div className="text-center">
-            <p className="text-[10px] text-gray-400 font-bold uppercase">Spiele</p>
-            <p className="font-black text-[#001845]">{player.spiele}</p>
-          </div>
-          <div className="text-center">
-            <p className="text-[10px] text-gray-400 font-bold uppercase text-blue-500">Tore</p>
-            <p className="font-black text-blue-600">{player.tore}</p>
-          </div>
-        </div>
+        {/* Die Stats-Sektion wurde hier entfernt */}
       </div>
     </div>
   );
