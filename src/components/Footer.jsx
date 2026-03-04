@@ -39,7 +39,6 @@ export default function Footer() {
           </p>
           
           <div className="space-y-2 pt-1">
-            {/* ADRESSE */}
             <a 
               href="https://www.google.com/maps/search/?api=1&query=Haedenkampstraße+81,+45143+Essen" 
               target="_blank" 
@@ -50,17 +49,15 @@ export default function Footer() {
               <span>Haedenkampstraße 81<br />45143 Essen</span>
             </a>
 
-            {/* E-MAIL LINK IM FOOTER */}
-<a 
-  href="https://mail.google.com/mail/?view=cm&fs=1&to=alemanniaessen@gmail.com" 
-  target="_blank" 
-  rel="noreferrer" 
-  className="flex items-center gap-3 text-sm group hover:text-white transition"
->
-  <div className="text-blue-500 group-hover:text-white transition"><IconMail /></div>
-  <span>alemanniaessen@gmail.com</span>
-</a>
-          
+            <a 
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=alemanniaessen@gmail.com" 
+              target="_blank" 
+              rel="noreferrer" 
+              className="flex items-center gap-3 text-sm group hover:text-white transition"
+            >
+              <div className="text-blue-500 group-hover:text-white transition"><IconMail /></div>
+              <span>alemanniaessen@gmail.com</span>
+            </a>
           </div>
         </div>
 
@@ -88,7 +85,6 @@ export default function Footer() {
             <li><Link to="/impressum" onClick={handleLinkClick} className="hover:text-blue-400 hover:translate-x-2 transition-all duration-300 block">Impressum</Link></li>
             <li><Link to="/datenschutz" onClick={handleLinkClick} className="hover:text-blue-400 hover:translate-x-2 transition-all duration-300 block">Datenschutz</Link></li>
             <li><a href="https://www.fupa.net/club/alemannia-essen/teams" target="_blank" rel="noreferrer" className="hover:text-blue-400 hover:translate-x-2 transition-all duration-300 block">FuPa Profil</a></li>
-            {/* NEU: FUSSBALL.DE LINK */}
             <li><a href="https://www.fussball.de/verein/alemannia-essen-niederrhein/-/id/00ES8GN914000007VV0AG08LVUPGND5I#!/" target="_blank" rel="noreferrer" className="hover:text-blue-400 hover:translate-x-2 transition-all duration-300 block">Fussball.de</a></li>
           </ul>
         </div>
@@ -107,13 +103,16 @@ export default function Footer() {
                className="bg-gray-800 p-3 rounded-lg hover:bg-pink-600 hover:text-white hover:-translate-y-1 transition-all duration-300 shadow-lg">
               <IconInsta />
             </a>
-            
+            {/* HIER WIRD ICONTIKTOK JETZT GENUTZT */}
+            <a href="https://www.tiktok.com/@alemanniaessen" target="_blank" rel="noreferrer" 
+               className="bg-gray-800 p-3 rounded-lg hover:bg-black hover:text-white hover:-translate-y-1 transition-all duration-300 shadow-lg">
+              <IconTiktok />
+            </a>
           </div>
         </div>
 
       </div>
 
-      {/* COPYRIGHT BOTTOM BAR */}
       <div className="max-w-7xl mx-auto px-6 mt-10 pt-6 border-t border-gray-800/50 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-600 uppercase tracking-wider">
         <div>
           © {new Date().getFullYear()} Alemannia Essen 2017 e.V.
