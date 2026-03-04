@@ -44,7 +44,7 @@ export default function Hero() {
         </div>
 
         {/* --- DIE STATISTIKEN --- */}
-        <div className="flex justify-center gap-8 md:gap-16 text-white/70 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] border-t border-white/10 pt-8">
+        <div className="flex justify-center gap-8 md:gap-16 text-white/70 text-7px] md:text-xs font-bold uppercase tracking-[0.2em] border-t border-white/10 ">
           <div className="flex flex-col">
             <span className="text-white text-2xl md:text-3xl font-black mb-1">2017</span>
             Gegründet

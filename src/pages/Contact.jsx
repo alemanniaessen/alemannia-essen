@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-// --- ICONS (Bleiben gleich) ---
+// --- ICONS ---
 const IconMap = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>;
 const IconMail = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>;
 const IconPhone = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>;
@@ -9,54 +9,37 @@ const IconFacebook = () => <svg className="w-6 h-6" fill="currentColor" viewBox=
 const IconWhatsApp = () => <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.463 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>;
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    betreff: "",
-    nachricht: ""
-  });
+  const [status, setStatus] = useState("");
 
-  const [status, setStatus] = useState(null);
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setStatus("Sende...");
 
-  // --- HIER NEU: E-Mail Versand mit Web3Forms ---
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    
-    // HIER DEINEN KEY EINFÜGEN:
-    const accessKey = "ecbcedad-d224-446d-a712-15d8596bdc44"; 
-
-    // Die Daten für Web3Forms vorbereiten
-    const data = {
-      access_key: accessKey,
-      ...formData,
-      subject: `Neue Nachricht von ${formData.name}: ${formData.betreff}` // Betreff in der Email
-    };
+    const formData = new FormData(event.target);
+    // Dein neuer Access Key:
+    formData.append("access_key", "f54ad900-985b-455c-a5db-b17c8cd70675");
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify(data),
+        body: formData
       });
 
-      const result = await response.json();
+      const data = await response.json();
 
-      if (result.success) {
+      if (data.success) {
         setStatus("success");
-        setFormData({ name: "", email: "", betreff: "", nachricht: "" }); // Formular leeren
+        event.target.reset(); // Formular nach Erfolg leeren
       } else {
-        alert("Fehler beim Senden: " + result.message);
+        console.log("Error", data);
+        setStatus("error");
+        alert("Fehler: " + data.message);
       }
     } catch (error) {
+      console.log("Error", error);
+      setStatus("error");
       alert("Ein Fehler ist aufgetreten.");
     }
-  };
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   return (
@@ -82,24 +65,20 @@ export default function Contact() {
             <h2 className="text-xl font-bold text-[#001845] mb-6">Direkt vernetzen</h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               
-              {/* WhatsApp - HIER WAR DER FEHLER: href="#" wurde zu href="https://wa.me" geändert */}
               <a href="https://wa.me" target="_blank" rel="noreferrer" className="flex flex-col items-center justify-center p-4 rounded-xl bg-green-50 text-green-600 hover:bg-green-600 hover:text-white transition shadow-sm border border-green-100">
                 <IconWhatsApp /> 
                 <span className="font-bold mt-2">WhatsApp</span>
               </a>
 
-              {/* Instagram */}
               <a href="https://www.instagram.com/alemanniaessen/" target="_blank" rel="noreferrer" className="flex flex-col items-center justify-center p-4 rounded-xl bg-pink-50 text-pink-600 hover:bg-gradient-to-tr hover:from-purple-500 hover:to-pink-500 hover:text-white transition shadow-sm border border-pink-100">
                 <IconInsta />
                 <span className="font-bold mt-2">Instagram</span>
               </a>
 
-              {/* Facebook */}
               <a href="https://www.facebook.com/AlemanniaEssen2017" target="_blank" rel="noreferrer" className="flex flex-col items-center justify-center p-4 rounded-xl bg-blue-50 text-blue-700 hover:bg-blue-700 hover:text-white transition shadow-sm border border-blue-100">
                 <IconFacebook />
                 <span className="font-bold mt-2">Facebook</span>
               </a>
-
             </div>
           </div>
 
@@ -109,7 +88,7 @@ export default function Contact() {
             
             {status === "success" && (
               <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-6">
-                Vielen Dank! Deine Nachricht wurde gesendet.
+                Vielen Dank! Deine Nachricht wurde erfolgreich gesendet.
               </div>
             )}
 
@@ -117,7 +96,7 @@ export default function Contact() {
               <div>
                 <label className="block text-gray-700 font-bold mb-1 text-sm">Dein Name</label>
                 <input 
-                  type="text" name="name" required value={formData.name} onChange={handleChange}
+                  type="text" name="name" required 
                   className="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500"
                   placeholder="Max Mustermann"
                 />
@@ -126,7 +105,7 @@ export default function Contact() {
               <div>
                 <label className="block text-gray-700 font-bold mb-1 text-sm">Deine E-Mail</label>
                 <input 
-                  type="email" name="email" required value={formData.email} onChange={handleChange}
+                  type="email" name="email" required 
                   className="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500"
                   placeholder="max@beispiel.de"
                 />
@@ -135,7 +114,7 @@ export default function Contact() {
               <div>
                 <label className="block text-gray-700 font-bold mb-1 text-sm">Betreff</label>
                 <select 
-                  name="betreff" value={formData.betreff} onChange={handleChange}
+                  name="subject" required
                   className="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500"
                 >
                   <option value="">Bitte wählen...</option>
@@ -149,7 +128,7 @@ export default function Contact() {
               <div>
                 <label className="block text-gray-700 font-bold mb-1 text-sm">Nachricht</label>
                 <textarea 
-                  name="nachricht" required rows="4" value={formData.nachricht} onChange={handleChange}
+                  name="message" required rows="4" 
                   className="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500"
                   placeholder="Hallo, ich würde gerne..."
                 ></textarea>
@@ -159,20 +138,16 @@ export default function Contact() {
                 type="submit" 
                 className="w-full bg-[#001845] hover:bg-blue-800 text-white font-bold py-4 rounded-lg shadow-md hover:shadow-lg transition"
               >
-                Nachricht absenden
+                {status === "Sende..." ? "Wird gesendet..." : "Nachricht absenden"}
               </button>
             </form>
           </div>
-
         </div>
 
         {/* ---------------- RECHTE SPALTE ---------------- */}
         <div className="flex flex-col h-full space-y-8">
-          
-          {/* Adress-Box */}
           <div className="bg-white rounded-2xl shadow-lg p-8 flex-shrink-0">
             <h3 className="text-xl font-bold text-[#001845] mb-6 border-b pb-2">Hier findest du uns</h3>
-            
             <div className="space-y-6">
               <div className="flex items-start gap-4">
                 <div className="bg-blue-100 p-3 rounded-full text-blue-600"><IconMap /></div>
@@ -182,15 +157,22 @@ export default function Contact() {
                   <p className="text-gray-600">45143 Essen</p>
                 </div>
               </div>
-
-              <div className="flex items-start gap-4">
-                <div className="bg-blue-100 p-3 rounded-full text-blue-600"><IconMail /></div>
-                <div>
-                  <p className="font-bold text-gray-800">E-Mail</p>
-                  <a href="mailto:info@alemannia-essen.de" className="text-blue-600 hover:underline">info@alemannia-essen.de</a>
-                </div>
-              </div>
-
+             <div className="flex items-start gap-4">
+  <div className="bg-blue-100 p-3 rounded-full text-blue-600">
+    <IconMail />
+  </div>
+  <div>
+    <p className="font-bold text-gray-800 text-lg">E-Mail</p>
+    <a 
+      href="https://mail.google.com/mail/?view=cm&fs=1&to=alemanniaessen@gmail.com" 
+      target="_blank" 
+      rel="noreferrer" 
+      className="text-blue-600 hover:underline font-medium"
+    >
+      alemanniaessen@gmail.com
+    </a>
+  </div>
+</div>
               <div className="flex items-start gap-4">
                 <div className="bg-blue-100 p-3 rounded-full text-blue-600"><IconPhone /></div>
                 <div>
@@ -201,7 +183,6 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Große Karte - MIT FLEX-GROW DAMIT SIE SICH STRECKT */}
           <div className="bg-white rounded-2xl shadow-lg overflow-hidden border-4 border-white flex-grow min-h-[400px]">
             <iframe 
               title="Vereinsgelände Karte"
@@ -209,13 +190,11 @@ export default function Contact() {
               height="100%" 
               frameBorder="0" 
               style={{ border: 0, minHeight: "100%" }} 
-              src="https://maps.google.com/maps?q=Haedenkampstra%C3%9Fe%2081%2C%2045143%20Essen&t=m&z=15&output=embed&iwloc=near"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2486.234321312345!2d6.9856!3d51.4508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDI3JzAyLjkiTiA2wrA1OScxOC4yIkU!5e0!3m2!1sde!2sde!4v123456789"
               allowFullScreen=""
             ></iframe>
           </div>
-
         </div>
-
       </div>
     </div>
   );
