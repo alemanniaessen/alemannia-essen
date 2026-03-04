@@ -2,149 +2,110 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function Sponsors() {
-  // 1. HAUPTSPONSOR (Sponsor 1)
-  const mainSponsor = {
-    name: "Hauptsponsor",
-    logo: "/sponsor1.jpg", // Bilddatei: sponsor1.png
-    website: "#",
-    slogan: "Starker Partner für unsere Region."
-  };
-
-  // 2. PREMIUM PARTNER (Sponsor 2 bis 5)
+  // 1. WICHTIGE PARTNER
   const premiumPartners = [
-    { name: "Premium Partner 1", logo: "/sponsor2.jpg", website: "#" },
-    { name: "Premium Partner 2", logo: "/sponsor3.jpg", website: "#" },
-    { name: "Premium Partner 3", logo: "/sponsor4.jpg", website: "#" },
-    { name: "Premium Partner 4", logo: "/sponsor5.jpg", website: "#" },
+    { name: "Premium Partner 1", logo: "/sponsor7.jpg", website: "#" },
+    { name: "Premium Partner 2", logo: "/sponsor13.jpeg", website: "#" },
+    { name: "Premium Partner 3", logo: "/sponsor3.jpg", website: "#" },
+    { name: "Premium Partner 4", logo: "/sponsor4.jpg", website: "#" },
+    { name: "Premium Partner 5", logo: "/sponsor5.jpg", website: "#" },     
+    { name: "Premium Partner 6", logo: "/sponsor16.jpeg", website: "#" },
   ];
 
-  // 3. BUSINESS PARTNER (Sponsor 6 bis 15)
+  // 2. BUSINESS PARTNER
   const businessPartners = [
     { name: "Partner 1", logo: "/sponsor6.jpg", website: "#" },
-    { name: "Partner 2", logo: "/sponsor7.jpg", website: "#" },
-    { name: "Partner 3", logo: "/sponsor8.jpg", website: "#" },
+    { name: "Partner 2", logo: "/sponsor1.jpg", website: "#" },
+    { name: "Partner 3", logo: "/sponsor8.jpg", website: "#" }, // Dies ist die ESPE GMBH
     { name: "Partner 4", logo: "/sponsor9.jpg", website: "#" },
     { name: "Partner 5", logo: "/sponsor10.jpg", website: "#" },
     { name: "Partner 6", logo: "/sponsor11.jpg", website: "#" },
     { name: "Partner 7", logo: "/sponsor12.jpg", website: "#" },
-    { name: "Partner 8", logo: "/sponsor13.jpeg", website: "#" },
+    { name: "Partner 8", logo: "/sponsor2.jpg", website: "#" },
     { name: "Partner 9", logo: "/sponsor14.jpeg", website: "#" },
-    { name: "Partner 10", logo: "/sponsor15.jpeg", website: "#" },
+    { name: "Partner 10", logo: "/sponsor17.jpeg", website: "#" },
   ];
 
   return (
-    <div className="bg-slate-50 min-h-screen">
+    <div className="bg-white min-h-screen pb-24 font-sans text-[#001845]">
       
-      {/* --- HERO HEADER --- */}
-      <div className="relative bg-[#001845] py-24 overflow-hidden">
-        {/* Dekoratives Licht im Hintergrund */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600 rounded-full mix-blend-screen filter blur-[120px] opacity-20 -mr-64 -mt-64"></div>
-        
-        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
-          <span className="text-blue-400 font-black uppercase tracking-[0.3em] text-sm">Netzwerk</span>
-          <h1 className="text-5xl md:text-7xl font-black text-white mt-4 mb-6 uppercase tracking-tight">
-            Unsere <span className="text-blue-500">Partner</span>
-          </h1>
-          <p className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
-            Gemeinsam für Alemannia Essen. Diese Unternehmen unterstützen unseren Verein und machen unsere Arbeit erst möglich.
-          </p>
-        </div>
+      {/* --- HEADER --- */}
+      <div className="bg-[#001845] pt-20 pb-24 text-center text-white relative">
+        <h1 className="text-5xl md:text-6xl font-black uppercase italic tracking-tighter">
+          Unsere <span className="text-blue-500">Partner</span>
+        </h1>
+        <div className="w-20 h-2 bg-blue-600 mx-auto mt-4 rounded-full"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 -mt-12 relative z-20 pb-24">
+      <div className="max-w-7xl mx-auto px-6 -mt-10 relative z-10">
         
-        {/* --- HAUPTSPONSOR CARD --- */}
-        <section className="mb-20">
-          <div className="bg-white rounded-[2rem] shadow-2xl overflow-hidden border border-gray-100">
-            <div className="grid grid-cols-1 md:grid-cols-2">
-              <div className="p-12 flex items-center justify-center bg-gray-50">
-                <img 
-                  src={mainSponsor.logo} 
-                  alt={mainSponsor.name} 
-                  className="max-h-32 md:max-h-48 object-contain transition-transform duration-700 hover:scale-110"
-                />
-              </div>
-              <div className="p-12 flex flex-col justify-center bg-white border-l border-gray-50 text-center md:text-left">
-                <span className="text-blue-600 font-bold uppercase text-xs tracking-widest mb-2">Hauptsponsor</span>
-                <h2 className="text-3xl font-black text-[#001845] mb-4">{mainSponsor.name}</h2>
-                <p className="text-gray-500 mb-8 text-lg italic">"{mainSponsor.slogan}"</p>
+        {/* --- KATEGORIE 1: WICHTIGE PARTNER --- */}
+        <section className="mb-24">
+          <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 border border-gray-100 overflow-hidden">
+            <div className="flex items-center gap-4 mb-10">
+              <h2 className="text-3xl font-black uppercase italic">Wichtige Partner</h2>
+              <div className="h-[2px] bg-blue-600 flex-grow"></div>
+            </div>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {premiumPartners.map((p, i) => (
                 <a 
-                  href={mainSponsor.website} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="bg-[#001845] text-white text-center py-4 px-8 rounded-xl font-bold hover:bg-blue-700 transition shadow-lg self-center md:self-start"
+                  key={i} 
+                  href={p.website}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="bg-gray-50 rounded-2xl p-4 flex items-center justify-center h-48 hover:bg-blue-50 transition-all duration-300 group border border-transparent hover:border-blue-200 overflow-hidden"
                 >
-                  Website besuchen
+                  <img 
+                    src={p.logo} 
+                    alt={p.name} 
+                    className="max-h-[115%] max-w-[115%] object-contain transition-transform duration-500 group-hover:scale-105" 
+                  />
                 </a>
-              </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* --- PREMIUM PARTNER GRID --- */}
-        <section className="mb-20">
-          <div className="flex items-center gap-6 mb-12">
-            <h2 className="text-2xl font-black text-[#001845] uppercase tracking-wider whitespace-nowrap">Premium Partner</h2>
-            <div className="h-[2px] bg-gradient-to-r from-blue-600 to-transparent w-full"></div>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {premiumPartners.map((p, i) => (
-              <a 
-                key={i} href={p.website}
-                className="group bg-white rounded-2xl p-10 shadow-md hover:shadow-2xl transition-all duration-500 border border-transparent hover:border-blue-100 flex items-center justify-center h-56"
-              >
-                <img 
-                  src={p.logo} 
-                  alt={p.name} 
-                  className="max-h-24 object-contain filter grayscale group-hover:grayscale-0 transition duration-500 transform group-hover:scale-105"
-                />
-              </a>
-            ))}
-          </div>
-        </section>
-
-        {/* --- BUSINESS PARTNER GRID --- */}
-        <section className="mb-20">
-          <div className="flex items-center gap-6 mb-12">
-            <h2 className="text-xl font-black text-gray-400 uppercase tracking-wider whitespace-nowrap">Business Partner</h2>
-            <div className="h-[1px] bg-gray-200 w-full"></div>
+        {/* --- KATEGORIE 2: BUSINESS PARTNER --- */}
+        <section className="mb-24 px-4">
+          <div className="flex items-center gap-4 mb-10">
+            <h2 className="text-2xl font-black text-gray-400 uppercase italic">Business Partner</h2>
+            <div className="h-[1px] bg-gray-200 flex-grow"></div>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
             {businessPartners.map((p, i) => (
               <div 
-                key={i}
-                className="bg-white/60 backdrop-blur-sm rounded-xl p-6 shadow-sm hover:shadow-md transition-all border border-gray-100 flex items-center justify-center h-32 group"
+                key={i} 
+                className="bg-white border border-gray-200 rounded-xl p-3 h-32 flex items-center justify-center hover:shadow-md transition-all duration-300 overflow-hidden group"
               >
                 <img 
                   src={p.logo} 
                   alt={p.name} 
-                  className="max-h-12 object-contain filter opacity-60 group-hover:opacity-100 transition duration-300"
+                  style={p.name === "Partner 3" ? { objectPosition: "10% 20%" } : {}}
+                  className={`
+                    object-contain transition-transform duration-500 group-hover:scale-105
+                    ${p.name === "Partner 3" ? "max-h-[100%] max-w-[100%] scale-[5.0]" : "max-h-[110%] max-w-[110%]"}
+                  `} 
                 />
               </div>
             ))}
           </div>
         </section>
 
-        {/* --- CTA: SPONSOR WERDEN --- */}
-        <div className="bg-gradient-to-br from-[#001845] to-blue-900 rounded-[2.5rem] p-12 md:p-20 text-center relative overflow-hidden">
-          <div className="relative z-10">
-            <h2 className="text-3xl md:text-5xl font-black text-white mb-6 uppercase tracking-tight">
-              Ihr Logo auf unserer Brust?
-            </h2>
-            <p className="text-blue-100 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light">
-              Werden Sie Teil der Alemannia-Familie und unterstützen Sie den Sport in Essen. Wir finden das passende Paket für Ihr Unternehmen.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
-                to="/kontakt" 
-                className="bg-white text-[#001845] font-black py-5 px-12 rounded-2xl hover:bg-blue-400 hover:text-white transition-all transform hover:scale-105 shadow-2xl"
-              >
-                Jetzt Partner werden
-              </Link>
-            </div>
-          </div>
+        {/* --- KONTAKT CTA --- */}
+        <div className="bg-gray-50 rounded-[2.5rem] p-10 md:p-16 text-center border border-gray-200 shadow-sm">
+          <h2 className="text-3xl font-black uppercase italic mb-4">Partner werden</h2>
+          <p className="text-gray-600 max-w-xl mx-auto mb-8 font-medium">
+            Unterstützen Sie Alemannia Essen und platzieren Sie Ihre Marke in unserem starken Netzwerk.
+          </p>
+          <Link 
+            to="/kontakt" 
+            className="inline-block bg-[#001845] text-white font-black py-4 px-10 rounded-xl hover:bg-blue-600 transition-colors uppercase tracking-widest"
+          >
+            Jetzt anfragen
+          </Link>
         </div>
 
       </div>

@@ -87,7 +87,7 @@ export default function Footer() {
             <li><Link to="/kontakt" onClick={handleLinkClick} className="hover:text-blue-400 hover:translate-x-2 transition-all duration-300 block">Kontakt</Link></li>
             <li><Link to="/impressum" onClick={handleLinkClick} className="hover:text-blue-400 hover:translate-x-2 transition-all duration-300 block">Impressum</Link></li>
             <li><Link to="/datenschutz" onClick={handleLinkClick} className="hover:text-blue-400 hover:translate-x-2 transition-all duration-300 block">Datenschutz</Link></li>
-            <li><a href="https://www.fupa.net/team/alemannia-essen-m1-2025-26" target="_blank" rel="noreferrer" className="hover:text-blue-400 hover:translate-x-2 transition-all duration-300 block">FuPa Profil</a></li>
+            <li><a href="https://www.fupa.net/club/alemannia-essen/teams" target="_blank" rel="noreferrer" className="hover:text-blue-400 hover:translate-x-2 transition-all duration-300 block">FuPa Profil</a></li>
             {/* NEU: FUSSBALL.DE LINK */}
             <li><a href="https://www.fussball.de/verein/alemannia-essen-niederrhein/-/id/00ES8GN914000007VV0AG08LVUPGND5I#!/" target="_blank" rel="noreferrer" className="hover:text-blue-400 hover:translate-x-2 transition-all duration-300 block">Fussball.de</a></li>
           </ul>
