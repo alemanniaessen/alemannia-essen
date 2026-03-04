@@ -7,7 +7,7 @@ export default function Hero() {
       
 
       {/* CONTENT */}
-      <div className="relative z-10 text-center px-4 max-w-4xl pt-8">
+      <div className="relative z-10 text-center px-4 max-w-4xl ">
         
         {/* Logo */}
         <div className="mb-6">
@@ -37,27 +37,27 @@ export default function Hero() {
           </Link>
           <Link 
             to="/mitglied" 
-            className="w-full sm:w-auto bg-blue-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-500 transition shadow-lg text-center"
+            className="w-full sm:w-auto bg-blue-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-400 transition shadow-lg text-center"
           >
             Mitglied werden
           </Link>
         </div>
 
         {/* --- DIE STATISTIKEN --- */}
-        <div className="flex justify-center gap-8 md:gap-16 text-white/70 text-7px] md:text-xs font-bold uppercase tracking-[0.2em] border-t border-white/10 ">
-          <div className="flex flex-col">
-            <span className="text-white text-2xl md:text-3xl font-black mb-1">2017</span>
-            Gegründet
-          </div>
-          <div className="flex flex-col">
-            <span className="text-white text-2xl md:text-3xl font-black mb-1">7+</span>
-            Teams
-          </div>
-          <div className="flex flex-col">
-            <span className="text-white text-2xl md:text-3xl font-black mb-1">400+</span>
-            Mitglieder
-          </div>
-        </div>
+        <div className="-mt-4 flex justify-center gap-8 md:gap-16 text-white/70 text-[7px] md:text-xs font-bold uppercase tracking-[0.2em] border-t border-white/10 ">
+  <div className="flex flex-col">
+    <span className="text-white text-2xl md:text-3xl font-black mb-1">2017</span>
+    Gegründet
+  </div>
+  <div className="flex flex-col">
+    <span className="text-white text-2xl md:text-3xl font-black mb-1">7+</span>
+    Teams
+  </div>
+  <div className="flex flex-col">
+    <span className="text-white text-2xl md:text-3xl font-black mb-1">400+</span>
+    Mitglieder
+  </div>
+</div>
 
       </div>
     </section>
