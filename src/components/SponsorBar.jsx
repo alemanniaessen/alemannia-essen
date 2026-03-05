@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function SponsorBar() {
-  // Deine Liste mit .jpg und .jpeg genau wie du sie hattest
   const allSponsors = [
     { logo: "/sponsor1.jpg" },
     { logo: "/sponsor2.jpg" },
@@ -17,7 +16,7 @@ export default function SponsorBar() {
     { logo: "/sponsor12.jpg" },
     { logo: "/sponsor13.jpeg" },
     { logo: "/sponsor14.jpeg" },
-    { logo: "/sponsor15.jpeg" },
+    { logo: "/sponsor20.jpg" }, // Dieses Logo wird in der Box gezoomt
     { logo: "/sponsor16.jpeg" },
     { logo: "/sponsor17.jpeg" },
   ];
@@ -31,43 +30,34 @@ export default function SponsorBar() {
         </span>
       </div>
 
-      {/* Weiche Kanten an den Seiten */}
       <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none"></div>
       <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none"></div>
 
-      {/* Das Band */}
       <div className="flex w-max animate-scroll hover:pause">
-        
-        {/* Set 1: Originale Liste */}
-        <div className="flex items-center">
-          {allSponsors.map((s, index) => (
-            // Hier ist die "Box"
-            <div key={index} className="mx-4 flex-shrink-0">
-              <div className="w-48 h-32 bg-white rounded-xl shadow-md border border-gray-100 flex items-center justify-center p-4 hover:shadow-lg hover:scale-105 transition-all duration-300">
-                <img 
-                  src={s.logo} 
-                  alt={`Sponsor ${index + 1}`} 
-                  className="max-h-full max-w-full object-contain" 
-                />
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Set 2: Duplikat für den nahtlosen Loop */}
-        <div className="flex items-center">
-          {allSponsors.map((s, index) => (
-            <div key={`dup-${index}`} className="mx-4 flex-shrink-0">
-              <div className="w-60 h-32 bg-white rounded-xl shadow-md border border-gray-100 flex items-center justify-center p-4 hover:shadow-lg hover:scale-105 transition-all duration-250">
-                <img 
-                  src={s.logo} 
-                  alt={`Sponsor ${index + 1}`} 
-                  className="max-h-full max-w-full object-contain" 
-                />
-              </div>
-            </div>
-          ))}
-        </div>
+        {[1, 2].map((iteration) => (
+          <div key={iteration} className="flex items-center">
+            {allSponsors.map((s, index) => {
+              // Check: Ist es Sponsor 20?
+              const isSponsor20 = s.logo.includes("sponsor20");
+              
+              return (
+                <div key={`${iteration}-${index}`} className="mx-4 flex-shrink-0">
+                  {/* Die Box ist für alle Sponsoren gleich groß (w-48 h-32) */}
+                  <div className="w-48 h-32 bg-white rounded-xl shadow-md border border-gray-100 flex items-center justify-center p-4 overflow-hidden hover:shadow-lg hover:scale-105 transition-all duration-300">
+                    <img 
+                      src={s.logo} 
+                      alt={`Sponsor ${index + 1}`} 
+                      className={`
+                        max-h-full max-w-full object-contain transition-transform duration-300
+                        ${isSponsor20 ? 'scale-[1.8]' : 'scale-100'} 
+                      `} 
+                    />
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        ))}
       </div>
 
       <style>{`
@@ -77,7 +67,6 @@ export default function SponsorBar() {
         }
         .animate-scroll {
           display: flex;
-          /* HIER: Geschwindigkeit auf 40s (langsamer) */
           animation: scroll 40s linear infinite; 
         }
         .hover\\:pause:hover {

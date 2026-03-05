@@ -10,6 +10,8 @@ export default function Sponsors() {
     { name: "Premium Partner 4", logo: "/sponsor4.jpg", website: "#" },
     { name: "Premium Partner 5", logo: "/sponsor5.jpg", website: "#" },     
     { name: "Premium Partner 6", logo: "/sponsor16.jpeg", website: "#" },
+    { name: "Premium Partner 7", logo: "/sponsor20.jpg", website: "#" },
+
   ];
 
   // 2. BUSINESS PARTNER
